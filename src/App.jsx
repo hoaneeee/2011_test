@@ -206,9 +206,9 @@ function UniverseScreen({ teacherImage, teacherName, onBackToLetter }) {
         </div>
 
         <div className="universe-canvas-wrapper">
-          <Canvas camera={{ position: [0, 2.5, 10], fov: 60 }} dpr={[1, 2]}>
+          <Canvas camera={{ position: [0, 3, 20], fov: 50 }} dpr={[1, 2]}>
             <color attach="background" args={["#050516"]} />
-            <fog attach="fog" args={["#0b0e28", 10, 35]} />
+            <fog attach="fog" args={["#0b0e28", 20, 80]} />
             <Suspense fallback={null}>
               <UniverseScene teacherImage={teacherImage} />
             </Suspense>
@@ -330,7 +330,7 @@ function ImageRing({ texture }) {
   });
 
   const count = 26;
-  const radius = 33;
+  const radius = 6; // ⬅️ giảm từ 33 xuống 5–7 tuỳ bạn
   const images = Array.from({ length: count });
 
   return (
