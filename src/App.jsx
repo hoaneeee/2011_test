@@ -155,14 +155,14 @@ function LetterScreen({ teacherImage, teacherName, opened, onSeeUniverse }) {
               <div className="letter-inner">
                 <h2>Gửi chị nhân ngày 20/11</h2>
                 <p>
-                  Nhân ngày Nhà giáo Việt Nam,em cảm ơn chị vì những giờ học
+                  Nhân ngày Nhà giáo Việt Nam, em cảm ơn chị vì những giờ học
                   đầy tâm huyết, vì sự kiên nhẫn, dịu dàng và cả những lần chị
                   nghiêm khắc để tụi em trưởng thành hơn.
                 </p>
                 <p>
-                  Mong chị luôn khỏe mạnh, bình an, lúc nào cũng giữ được nụ cười
-                  thật tươi và có nhiều niềm vui nhỏ xinh như chính những bài
-                  giảng của chị mỗi ngày.
+                  Mong chị luôn khỏe mạnh, bình an, lúc nào cũng giữ được nụ
+                  cười thật tươi và có nhiều niềm vui nhỏ xinh như chính những
+                  bài giảng của chị mỗi ngày.
                 </p>
                 <p className="letter-sign">
                   – Lời chúc nhỏ bé từ “học trò nhỏ” của chị –
