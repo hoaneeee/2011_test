@@ -6,7 +6,8 @@ import { OrbitControls, Stars, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { ShaderMaterial } from "three";
 import { GradientTexture } from "@react-three/drei";
-import teacherImg from "./assets/teacher.jpg";
+import teacherImg from "../assets/teacher.jpg";
+
 
 // ----- CUSTOM FRESNEL SHADER -----
 const CustomFresnelShader = {
