@@ -139,7 +139,7 @@ function LetterScreen({ teacherImage, teacherName, opened, onSeeUniverse }) {
               }
             >
               {!teacherImage && (
-                <span className="teacher-photo-placeholder">Ảnh cô</span>
+                <span className="teacher-photo-placeholder">Ảnh chị</span>
               )}
             </div>
           </div>
@@ -153,19 +153,19 @@ function LetterScreen({ teacherImage, teacherName, opened, onSeeUniverse }) {
             <div className="envelope-flap" />
             <div className="envelope-letter">
               <div className="letter-inner">
-                <h2>Gửi cô nhân ngày 20/11</h2>
+                <h2>Gửi chị nhân ngày 20/11</h2>
                 <p>
-                  Nhân ngày Nhà giáo Việt Nam, tụi em cảm ơn cô vì những giờ học
-                  đầy tâm huyết, vì sự kiên nhẫn, dịu dàng và cả những lần cô
+                  Nhân ngày Nhà giáo Việt Nam,em cảm ơn chị vì những giờ học
+                  đầy tâm huyết, vì sự kiên nhẫn, dịu dàng và cả những lần chị
                   nghiêm khắc để tụi em trưởng thành hơn.
                 </p>
                 <p>
-                  Mong cô luôn khỏe mạnh, bình an, lúc nào cũng giữ được nụ cười
+                  Mong chị luôn khỏe mạnh, bình an, lúc nào cũng giữ được nụ cười
                   thật tươi và có nhiều niềm vui nhỏ xinh như chính những bài
-                  giảng của cô mỗi ngày.
+                  giảng của chị mỗi ngày.
                 </p>
                 <p className="letter-sign">
-                  – Lời chúc nhỏ bé từ “học trò nhỏ” của cô –
+                  – Lời chúc nhỏ bé từ “học trò nhỏ” của chị –
                 </p>
               </div>
             </div>
@@ -176,7 +176,7 @@ function LetterScreen({ teacherImage, teacherName, opened, onSeeUniverse }) {
             className="primary-button letter-button"
             onClick={onSeeUniverse}
           >
-            Xem vũ trụ chỉ có cô giáo
+            Xem vũ trụ chỉ có chị
           </button>
         </div>
       </div>
@@ -201,7 +201,7 @@ function UniverseScreen({ teacherImage, teacherName, onBackToLetter }) {
         <div className="universe-title">
           <h1>Vũ trụ chỉ có {teacherName}</h1>
           <p>
-            Kéo – xoay – phóng to thu nhỏ để khám phá vũ trụ nơi cô là tâm điểm.
+            Kéo – xoay – phóng to thu nhỏ để khám phá vũ trụ nơi chị là tâm điểm.
           </p>
         </div>
 
@@ -246,7 +246,7 @@ function UniverseScene({ teacherImage }) {
       <ImageRing texture={texture} />
       {/* Một “dải ảnh” xa xa kiểu background */}
       <FloatingImageBelt texture={texture} />
-      ánh sáng fill để ảnh cô sáng hơn ở không gian tối
+      ánh sáng fill để ảnh chị sáng hơn ở không gian tối
       <ambientLight intensity={0.25} />
       {/* Điều khiển camera */}
       <OrbitControls
@@ -357,17 +357,16 @@ function FloatingImageBelt({ texture }) {
   const beltRef = useRef();
 
   const count = 80;
-  const radius = 6;
+  const radius = 4.5; // nhỏ lại cho ôm sát hành tinh hơn
 
-  // Tạo vị trí ổn định (pure) bằng pseudoNoise
   const positions = useMemo(() => {
     return Array.from({ length: count }).map((_, i) => {
       const angle = (i / count) * Math.PI * 2;
       const x = Math.cos(angle) * radius;
       const z = Math.sin(angle) * radius;
 
-      const noise = pseudoNoise(i); // số từ 0 → 1, ổn định theo i
-      const y = (noise - 0.5) * 1.5;
+      const noise = pseudoNoise(i);
+      const y = (noise - 0.5) * 1.2;
 
       return { x, y, z, angle };
     });
@@ -380,7 +379,11 @@ function FloatingImageBelt({ texture }) {
   });
 
   return (
-    <group ref={beltRef} position={[0, 0.6, -1]}>
+    <group
+      ref={beltRef}
+      position={[0, 0.6, 1.4]} // ⬅️ đẩy ra phía trước hành tinh
+      rotation={[Math.PI / 9, 0, 0]} // ⬅️ hơi nghiêng cho nhìn rõ cả vòng
+    >
       {positions.map(({ x, y, z, angle }, i) => (
         <group key={i} position={[x, y, z]} rotation={[0, -angle, 0]}>
           <ImagePlane texture={texture} size={0.45} />
@@ -389,6 +392,7 @@ function FloatingImageBelt({ texture }) {
     </group>
   );
 }
+
 
 /* --------- Hàm noise thuần (pure) --------- */
 
