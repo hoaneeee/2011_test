@@ -6,6 +6,7 @@ import { OrbitControls, Stars, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { ShaderMaterial } from "three";
 import { GradientTexture } from "@react-three/drei";
+import teacherImg from "./assets/teacher.jpg";
 
 // ----- CUSTOM FRESNEL SHADER -----
 const CustomFresnelShader = {
@@ -53,9 +54,7 @@ function ImagePlane({ texture, size = 0.8 }) {
 }
 
 // 👉 Ảnh cô giáo (có thể đổi sang import local)
-const TEACHER_IMAGE_URL =
-  "https://images.pexels.com/photos/4260323/pexels-photo-4260323.jpeg";
-
+const TEACHER_IMAGE_URL = teacherImg;
 const TEACHER_NAME = "Cô giáo của tụi em";
 
 function App() {
