@@ -6,8 +6,7 @@ import { OrbitControls, Stars, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { ShaderMaterial } from "three";
 import { GradientTexture } from "@react-three/drei";
-import teacherImg from "../assets/chi.jpg";
-
+import teacherImg from "./assets/chi.jpg";
 
 // ----- CUSTOM FRESNEL SHADER -----
 const CustomFresnelShader = {
@@ -201,7 +200,8 @@ function UniverseScreen({ teacherImage, teacherName, onBackToLetter }) {
         <div className="universe-title">
           <h1>Vũ trụ chỉ có {teacherName}</h1>
           <p>
-            Kéo – xoay – phóng to thu nhỏ để khám phá vũ trụ nơi chị là tâm điểm.
+            Kéo – xoay – phóng to thu nhỏ để khám phá vũ trụ nơi chị là tâm
+            điểm.
           </p>
         </div>
 
@@ -318,7 +318,6 @@ function PlanetCore() {
   );
 }
 
-
 /* --------- Vòng lớn ảnh cô xung quanh --------- */
 
 function ImageRing({ texture }) {
@@ -393,7 +392,6 @@ function FloatingImageBelt({ texture }) {
   );
 }
 
-
 /* --------- Hàm noise thuần (pure) --------- */
 
 function pseudoNoise(i) {
@@ -402,6 +400,5 @@ function pseudoNoise(i) {
 }
 
 /* --------- Mây nebula mờ phía sau --------- */
-
 
 export default App;
